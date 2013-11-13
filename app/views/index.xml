@@ -1,0 +1,29 @@
+<Alloy>
+	<Window class="container" navBarHidden="FALSE" exitOnClose="true">
+		 <Menu id="menu" platform="android" >
+            <!-- Cannot specify node text.  Use attributes only. -->
+            <MenuItem id="menuItem" title="View your data" icon="item1.png" onClick="showUserData" />
+            <MenuItem id="menuItem" title="Go Home" icon="item1.png" onClick="homeMenuClicked"  />
+        </Menu>
+			<View layout="vertical">
+				<ScrollView id="scrollView" layout="horizontal" showVerticalScrollIndicator="true">
+					<View layout="horizontal" height="Ti.UI.SIZE" >
+						<Label id = "helloLabel" class="fullWidth blueClr font16 alignCenter">Hello There</Label>
+						<Button id="clickMe" onClick = "buttonClicked" class="fullWidth dTop">Click me to see the further steps</Button>
+						<Label id="userInfoFormTitle" class="lblFullWidth blueClr font16 alignCenter"></Label>
+					</View>
+					<View layout="horizontal" id="userForm" top="1%" visible="FALSE" height="Ti.UI.SIZE">
+						<Label id="userName" class="normalWidth alignLeft blueClr font16 size1of2"> Enter Your Name </Label>
+						<TextField id ="userNameInput" class="size9of20"></TextField>
+					<Label id="userEmail" class="normalWidth alignLeft blueClr font16 size1of2">Enter your email</Label>
+						<TextField id="userEmailInput" class="size9of20"></TextField>
+						<Label id="userPhone" class="normalWidth alignLeft blueClr font16 size1of2">Enter phone number</Label>
+						<TextField id="userPhoneInput" class="size9of20" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD"></TextField>
+							<View layout="vertical" height="Ti.UI.SIZE"  backgroundColor="red" top="3dp">
+								<Button id="submitUserInfo" onClick="submitUserData">Submit</Button>
+							</View>
+					</View>
+				</ScrollView>	
+			</View>
+	</Window>
+</Alloy>

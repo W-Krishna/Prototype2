@@ -1,0 +1,13 @@
+
+".container" : {
+	backgroundColor : "white"
+  
+},
+".font16": {
+	font :{
+		fontSize: "16dp"
+	}
+},
+".dTop":{
+	top : "0.5%"
+}

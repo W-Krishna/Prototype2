@@ -1,0 +1,4 @@
+function goBack() {
+	$.winWebView.close();	
+}
+

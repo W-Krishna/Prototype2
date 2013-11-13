@@ -1,0 +1,45 @@
+".container": {
+	backgroundColor : "white"
+},
+".fullWidth": {
+	width :Ti.UI.FILL,
+},
+
+".normalWidth": {
+width :Ti.UI.SIZE,
+},
+
+".size1of2": {
+	width :"50%",
+},
+
+".size9of20": {
+	width :"45%",
+},
+
+".blueClr":{
+	color : "blue",
+},
+
+".font16": {
+	font :{
+		fontSize: "16dp"
+	}
+},
+".dTop":{
+	top : "0.5%"
+},
+
+".alignCenter": {
+		textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+},
+
+".alignLeft": {
+		textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+},
+
+".alignRight": {
+		textAlign : Ti.UI.TEXT_ALIGNMENT_RIGHT,
+}
+
+
