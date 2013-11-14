@@ -2,8 +2,9 @@
 	<Window class="container" navBarHidden="FALSE" exitOnClose="true">
 		 <Menu id="menu" platform="android" >
             <!-- Cannot specify node text.  Use attributes only. -->
-            <MenuItem id="menuItem" title="View your data" icon="item1.png" onClick="showUserData" />
             <MenuItem id="menuItem" title="Go Home" icon="item1.png" onClick="homeMenuClicked"  />
+            <MenuItem id="menuItem" title="View your data" icon="item1.png" onClick="showData"/>
+            <MenuItem id="seeWebView" title="Go To Web View" onClick="goWebView"></MenuItem>
         </Menu>
 			<View layout="vertical">
 				<ScrollView id="scrollView" layout="horizontal" showVerticalScrollIndicator="true">
@@ -18,7 +19,7 @@
 					<Label id="userEmail" class="normalWidth alignLeft blueClr font16 size1of2">Enter your email</Label>
 						<TextField id="userEmailInput" class="size9of20"></TextField>
 						<Label id="userPhone" class="normalWidth alignLeft blueClr font16 size1of2">Enter phone number</Label>
-						<TextField id="userPhoneInput" class="size9of20" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD"></TextField>
+						<TextField id="userPhoneInput" class="size9of20" keyboardType="Ti.UI.KEYBOARD_NUMBER_PAD" ></TextField>
 							<View layout="vertical" height="Ti.UI.SIZE"  backgroundColor="red" top="3dp">
 								<Button id="submitUserInfo" onClick="submitUserData">Submit</Button>
 							</View>

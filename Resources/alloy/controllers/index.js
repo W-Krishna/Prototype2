@@ -1,23 +1,30 @@
 function Controller() {
-    function __alloyId3() {
-        $.__views.index.removeEventListener("open", __alloyId3);
+    function __alloyId4() {
+        $.__views.index.removeEventListener("open", __alloyId4);
         if ($.__views.index.activity) $.__views.index.activity.onCreateOptionsMenu = function(e) {
             var __alloyId1 = {
-                id: "menuItem",
-                title: "View your data",
-                icon: "item1.png"
-            };
-            $.__views.menuItem = e.menu.add(_.pick(__alloyId1, Alloy.Android.menuItemCreateArgs));
-            $.__views.menuItem.applyProperties(_.omit(__alloyId1, Alloy.Android.menuItemCreateArgs));
-            showUserData ? $.__views.menuItem.addEventListener("click", showUserData) : __defers["$.__views.menuItem!click!showUserData"] = true;
-            var __alloyId2 = {
                 id: "menuItem",
                 title: "Go Home",
                 icon: "item1.png"
             };
+            $.__views.menuItem = e.menu.add(_.pick(__alloyId1, Alloy.Android.menuItemCreateArgs));
+            $.__views.menuItem.applyProperties(_.omit(__alloyId1, Alloy.Android.menuItemCreateArgs));
+            homeMenuClicked ? $.__views.menuItem.addEventListener("click", homeMenuClicked) : __defers["$.__views.menuItem!click!homeMenuClicked"] = true;
+            var __alloyId2 = {
+                id: "menuItem",
+                title: "View your data",
+                icon: "item1.png"
+            };
             $.__views.menuItem = e.menu.add(_.pick(__alloyId2, Alloy.Android.menuItemCreateArgs));
             $.__views.menuItem.applyProperties(_.omit(__alloyId2, Alloy.Android.menuItemCreateArgs));
-            homeMenuClicked ? $.__views.menuItem.addEventListener("click", homeMenuClicked) : __defers["$.__views.menuItem!click!homeMenuClicked"] = true;
+            showData ? $.__views.menuItem.addEventListener("click", showData) : __defers["$.__views.menuItem!click!showData"] = true;
+            var __alloyId3 = {
+                id: "seeWebView",
+                title: "Go To Web View"
+            };
+            $.__views.seeWebView = e.menu.add(_.pick(__alloyId3, Alloy.Android.menuItemCreateArgs));
+            $.__views.seeWebView.applyProperties(_.omit(__alloyId3, Alloy.Android.menuItemCreateArgs));
+            goWebView ? $.__views.seeWebView.addEventListener("click", goWebView) : __defers["$.__views.seeWebView!click!goWebView"] = true;
         }; else {
             Ti.API.warn("You attempted to attach an Android Menu to a lightweight Window");
             Ti.API.warn("or other UI component which does not have an Android activity.");
@@ -25,7 +32,8 @@ function Controller() {
         }
     }
     function homeMenuClicked() {
-        $.index.open();
+        homeWin = Alloy.createController("index").getView();
+        homeWin.open();
     }
     function buttonClicked() {
         $.helloLabel.text = "This window implements Action bar,menu bar, labels, text field. PLease enter your credentials and submit them to go further";
@@ -38,6 +46,10 @@ function Controller() {
             newwin = Alloy.createController("newWin").getView();
             newwin.open();
         }
+    }
+    function goWebView() {
+        webview = Alloy.createController("webView").getView();
+        webview.open();
     }
     function storeUserData() {
         var user = {};
@@ -56,9 +68,9 @@ function Controller() {
         }
         return userDetailsComplete;
     }
-    function showUserData() {
-        var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, "details.json");
-        alert(file.read().text);
+    function showData() {
+        showDatawin = Alloy.createController("showDataWin").getView();
+        showDatawin.open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -75,24 +87,24 @@ function Controller() {
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);
-    $.__views.index.addEventListener("open", __alloyId3);
-    $.__views.__alloyId4 = Ti.UI.createView({
+    $.__views.index.addEventListener("open", __alloyId4);
+    $.__views.__alloyId5 = Ti.UI.createView({
         layout: "vertical",
-        id: "__alloyId4"
+        id: "__alloyId5"
     });
-    $.__views.index.add($.__views.__alloyId4);
+    $.__views.index.add($.__views.__alloyId5);
     $.__views.scrollView = Ti.UI.createScrollView({
         id: "scrollView",
         layout: "horizontal",
         showVerticalScrollIndicator: "true"
     });
-    $.__views.__alloyId4.add($.__views.scrollView);
-    $.__views.__alloyId5 = Ti.UI.createView({
+    $.__views.__alloyId5.add($.__views.scrollView);
+    $.__views.__alloyId6 = Ti.UI.createView({
         layout: "horizontal",
         height: Ti.UI.SIZE,
-        id: "__alloyId5"
+        id: "__alloyId6"
     });
-    $.__views.scrollView.add($.__views.__alloyId5);
+    $.__views.scrollView.add($.__views.__alloyId6);
     $.__views.helloLabel = Ti.UI.createLabel({
         width: Ti.UI.FILL,
         color: "blue",
@@ -103,14 +115,14 @@ function Controller() {
         text: "Hello There",
         id: "helloLabel"
     });
-    $.__views.__alloyId5.add($.__views.helloLabel);
+    $.__views.__alloyId6.add($.__views.helloLabel);
     $.__views.clickMe = Ti.UI.createButton({
         width: Ti.UI.FILL,
         top: "0.5%",
         title: "Click me to see the further steps",
         id: "clickMe"
     });
-    $.__views.__alloyId5.add($.__views.clickMe);
+    $.__views.__alloyId6.add($.__views.clickMe);
     buttonClicked ? $.__views.clickMe.addEventListener("click", buttonClicked) : __defers["$.__views.clickMe!click!buttonClicked"] = true;
     $.__views.userInfoFormTitle = Ti.UI.createLabel({
         color: "blue",
@@ -120,7 +132,7 @@ function Controller() {
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         id: "userInfoFormTitle"
     });
-    $.__views.__alloyId5.add($.__views.userInfoFormTitle);
+    $.__views.__alloyId6.add($.__views.userInfoFormTitle);
     $.__views.userForm = Ti.UI.createView({
         layout: "horizontal",
         id: "userForm",
@@ -178,19 +190,19 @@ function Controller() {
         keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
     });
     $.__views.userForm.add($.__views.userPhoneInput);
-    $.__views.__alloyId6 = Ti.UI.createView({
+    $.__views.__alloyId7 = Ti.UI.createView({
         layout: "vertical",
         height: Ti.UI.SIZE,
         backgroundColor: "red",
         top: "3dp",
-        id: "__alloyId6"
+        id: "__alloyId7"
     });
-    $.__views.userForm.add($.__views.__alloyId6);
+    $.__views.userForm.add($.__views.__alloyId7);
     $.__views.submitUserInfo = Ti.UI.createButton({
         title: "Submit",
         id: "submitUserInfo"
     });
-    $.__views.__alloyId6.add($.__views.submitUserInfo);
+    $.__views.__alloyId7.add($.__views.submitUserInfo);
     submitUserData ? $.__views.submitUserInfo.addEventListener("click", submitUserData) : __defers["$.__views.submitUserInfo!click!submitUserData"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
@@ -207,8 +219,9 @@ function Controller() {
         } else Ti.API.error("Can't access action bar on a lightweight window.");
     });
     $.index.open();
-    __defers["$.__views.menuItem!click!showUserData"] && $.__views.menuItem.addEventListener("click", showUserData);
     __defers["$.__views.menuItem!click!homeMenuClicked"] && $.__views.menuItem.addEventListener("click", homeMenuClicked);
+    __defers["$.__views.menuItem!click!showData"] && $.__views.menuItem.addEventListener("click", showData);
+    __defers["$.__views.seeWebView!click!goWebView"] && $.__views.seeWebView.addEventListener("click", goWebView);
     __defers["$.__views.clickMe!click!buttonClicked"] && $.__views.clickMe.addEventListener("click", buttonClicked);
     __defers["$.__views.submitUserInfo!click!submitUserData"] && $.__views.submitUserInfo.addEventListener("click", submitUserData);
     _.extend($, exports);

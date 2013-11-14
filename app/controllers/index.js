@@ -17,7 +17,8 @@ $.index.addEventListener("open", function() {
 });
 
 function homeMenuClicked() {
-       $.index.open();
+      homeWin= Alloy.createController('index').getView();
+		homeWin.open();
 }
 
 // Ensure menu is displayed
@@ -41,8 +42,9 @@ function submitUserData(){
 		}
 }
 
-function displayUserData (){
-	showUserData();
+function goWebView (){
+	webview= Alloy.createController('webView').getView();
+		webview.open();
 }
 
 function storeUserData(){
@@ -64,11 +66,18 @@ function storeUserData(){
 	}
 	return userDetailsComplete;
 }
-
-function showUserData(){
+ /*function showUserData(){
+	
 	var file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,'details.json');
-	alert(file.read().text);
-}
+	
+	var userFile = JSON.parse(file.read().text);
+	if(!file){
+	alert("user details not available");
+	}
+	else{
+		alert(userFile.userName);
+	}
+}*/
 
 /*$.main.addEventListener('open', function(e) {
 	if( Alloy.Globals.Android.Api >= 11 ) {
@@ -79,7 +88,9 @@ function showUserData(){
         };  
     }
 });*/
+function showData (){
+	showDatawin= Alloy.createController('showDataWin').getView();
+		showDatawin.open();
+}
 $.index.open();
-
-
 

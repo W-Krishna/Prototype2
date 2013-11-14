@@ -1,0 +1,19 @@
+<Alloy>
+	<Window class="container" onFocus="showData" exitOnClose="true">
+		<View layout="vertical">
+		<View layout="horizontal" height="Ti.UI.SIZE" class = "dTop alignCenter">
+						<Label class="blueClr font16 size1of2  ">Your Name : </Label>
+						<Label id = "userName"class="blueClr font16 size1of2"></Label>
+						</View>
+						<View layout="horizontal" height="Ti.UI.SIZE" class = "alignCenter">
+						<Label class="blueClr font16 size1of2  ">Your Email : </Label>
+						<Label id="userEmail" class="blueClr font16 size1of2"></Label>
+						</View>
+						<View layout="horizontal" height="Ti.UI.SIZE" class = "alignCenter">
+						<Label class="blueClr font16 size1of2  ">Your Phone : </Label>
+						<Label id="userPhone" class="blueClr font16 size1of2"></Label>
+						</View>
+						<Button id="clickMe" onClick = "buttonClicked" class="fullWidth dTop">Click me to go back</Button>
+		</View>
+	</Window>
+</Alloy>
