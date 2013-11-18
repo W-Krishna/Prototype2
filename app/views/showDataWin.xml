@@ -13,7 +13,11 @@
 						<Label class="blueClr font16 size1of2  ">Your Phone : </Label>
 						<Label id="userPhone" class="blueClr font16 size1of2"></Label>
 						</View>
+						<Button onClick = "getPhoto">Add your photo</Button>
 						<Button id="clickMe" onClick = "buttonClicked" class="fullWidth dTop">Click me to go back</Button>
+						<View layout="horizontal" height = "Ti.UI.SIZE">
+						<ImageView id="userImage" borderColor="red" onClick="seThat" image="android/images/appicon.png">image</ImageView>
+						</View>
 		</View>
 	</Window>
 </Alloy>

@@ -10,6 +10,17 @@ function Controller() {
         $.userEmail.text = userEmail;
         $.userPhone.text = userPhone;
     }
+    function seThat() {
+        alert("okkk");
+    }
+    function getPhoto() {
+        Titanium.Media.isCameraSupported ? Titanium.Media.showCamera({
+            success: function() {},
+            mediaTypes: [ Titanium.Media.MEDIA_TYPE_PHOTO ],
+            showControls: false,
+            saveToPhotoGallery: true
+        }) : alert("Your device dosent support camera");
+    }
     function buttonClicked() {
         $.showDataWin.close();
     }
@@ -112,6 +123,12 @@ function Controller() {
         id: "userPhone"
     });
     $.__views.__alloyId18.add($.__views.userPhone);
+    $.__views.__alloyId20 = Ti.UI.createButton({
+        title: "Add your photo",
+        id: "__alloyId20"
+    });
+    $.__views.__alloyId13.add($.__views.__alloyId20);
+    getPhoto ? $.__views.__alloyId20.addEventListener("click", getPhoto) : __defers["$.__views.__alloyId20!click!getPhoto"] = true;
     $.__views.clickMe = Ti.UI.createButton({
         top: "0.5%",
         width: Ti.UI.FILL,
@@ -120,11 +137,26 @@ function Controller() {
     });
     $.__views.__alloyId13.add($.__views.clickMe);
     buttonClicked ? $.__views.clickMe.addEventListener("click", buttonClicked) : __defers["$.__views.clickMe!click!buttonClicked"] = true;
+    $.__views.__alloyId21 = Ti.UI.createView({
+        layout: "horizontal",
+        height: Ti.UI.SIZE,
+        id: "__alloyId21"
+    });
+    $.__views.__alloyId13.add($.__views.__alloyId21);
+    $.__views.userImage = Ti.UI.createImageView({
+        id: "userImage",
+        borderColor: "red",
+        image: "android/images/appicon.png"
+    });
+    $.__views.__alloyId21.add($.__views.userImage);
+    seThat ? $.__views.userImage.addEventListener("click", seThat) : __defers["$.__views.userImage!click!seThat"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.showDataWin.open();
     __defers["$.__views.showDataWin!focus!showData"] && $.__views.showDataWin.addEventListener("focus", showData);
+    __defers["$.__views.__alloyId20!click!getPhoto"] && $.__views.__alloyId20.addEventListener("click", getPhoto);
     __defers["$.__views.clickMe!click!buttonClicked"] && $.__views.clickMe.addEventListener("click", buttonClicked);
+    __defers["$.__views.userImage!click!seThat"] && $.__views.userImage.addEventListener("click", seThat);
     _.extend($, exports);
 }
 

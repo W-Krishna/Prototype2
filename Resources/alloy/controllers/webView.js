@@ -23,16 +23,16 @@ function Controller() {
         height: Ti.UI.SIZE
     });
     $.__views.winWebView.add($.__views.webview);
-    $.__views.__alloyId20 = Ti.UI.createButton({
+    $.__views.__alloyId22 = Ti.UI.createButton({
         title: "CLick here to return",
         layout: "vertical",
-        id: "__alloyId20"
+        id: "__alloyId22"
     });
-    $.__views.winWebView.add($.__views.__alloyId20);
-    goBack ? $.__views.__alloyId20.addEventListener("click", goBack) : __defers["$.__views.__alloyId20!click!goBack"] = true;
+    $.__views.winWebView.add($.__views.__alloyId22);
+    goBack ? $.__views.__alloyId22.addEventListener("click", goBack) : __defers["$.__views.__alloyId22!click!goBack"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId20!click!goBack"] && $.__views.__alloyId20.addEventListener("click", goBack);
+    __defers["$.__views.__alloyId22!click!goBack"] && $.__views.__alloyId22.addEventListener("click", goBack);
     _.extend($, exports);
 }
 
