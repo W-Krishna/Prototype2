@@ -31,7 +31,9 @@
          <android xmlns:android="http://schemas.android.com/apk/res/android">
 		<manifest android:installLocation="preferExternal">
 			<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="17"/>
-			<application android:theme="@android:style/Theme.Holo.Light"/>
+			<application android:theme="@android:style/Theme.Holo.Light">
+				<activity  android:name="ti.modules.titanium.media.TiCameraActivity"  />
+			</application>
 			</manifest>
     	</android>
 

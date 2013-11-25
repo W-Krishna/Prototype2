@@ -1,23 +1,33 @@
 //ActionBar-This is android specific, won't show up in iOS;
 $.index.addEventListener("open", function() {
-    if (Ti.Platform.osname === "android") {
+	var actionbar =  require('actionBarAndroid');
+	var ab = new actionbar();
+	ab.actionbar($.index);
+	//var actionBar = require('actionBarAndroid');
+	//var actionBar = require('menu');
+   /*if (Ti.Platform.osname === "android") {
         if (!$.index.activity) {
             Ti.API.error("Can't access action bar on a lightweight window.");
         } else {
           var  actionBar = $.index.activity.actionBar;
             if (actionBar) {
-                    actionBar.displayHomeAsUp = true; 
+                     actionBar.displayHomeAsUp = true; 
                     actionBar.onHomeIconItemSelected = function() {
+                    	Titanium.Android.currentActivity.finish();
                 	alert("I am action bar in android");
                     Ti.API.info("Home icon clicked!");
+              
                 };
             }
         }
-    }
+    }*/
+   
 });
 
+
 function homeMenuClicked() {
-      homeWin= Alloy.createController('index').getView();
+      homeWin= Alloy.createController('index', {
+      }).getView();
 		homeWin.open();
 }
 
@@ -37,6 +47,7 @@ function submitUserData(){
 		//alert("Clicked");
 		var userDetailsOk = storeUserData();
 		if(userDetailsOk){
+			
 		newwin= Alloy.createController('newWin').getView();
 		newwin.open();
 		}
@@ -92,5 +103,6 @@ function showData (){
 	showDatawin= Alloy.createController('showDataWin').getView();
 		showDatawin.open();
 }
+
 $.index.open();
 

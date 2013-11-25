@@ -1,12 +1,7 @@
 <Alloy>
-	<Window class="container" navBarHidden="FALSE" exitOnClose="true">
-		 <Menu id="menu" platform="android" >
-            <!-- Cannot specify node text.  Use attributes only. -->
-            <MenuItem id="menuItem" title="Go Home" icon="item1.png" onClick="homeMenuClicked"  />
-            <MenuItem id="menuItem" title="View your data" icon="item1.png" onClick="showData"/>
-            <MenuItem id="seeWebView" title="Go To Web View" onClick="goWebView"></MenuItem>
-        </Menu>
-			<View layout="vertical">
+	<Window class="container" id="index" exitOnClose="true" fullscreen="false">
+		<Menu id="menu"></Menu>
+					<View layout="vertical">
 				<ScrollView id="scrollView" layout="horizontal" showVerticalScrollIndicator="true">
 					<View layout="horizontal" height="Ti.UI.SIZE" >
 						<Label id = "helloLabel" class="fullWidth blueClr font16 alignCenter">Hello There</Label>

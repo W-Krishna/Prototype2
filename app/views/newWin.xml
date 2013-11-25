@@ -1,10 +1,9 @@
 <Alloy>
-	<Window class="container" exitOnClose="false">
+	<Window class="container" navBarHidden="FALSE" exitOnClose="false" fullscreen="false" >
 		
 		<View layout="vertical">
 		<Label class="font16 dTop">This window has just one button that will open a web view when clicked. Website I am rendering is rotten tomatoes. Also clicking on Go back button will take you back to previous screen.</Label>
 			<Button onClick="seeWebView">Click here to visit the web view</Button>
-			<Button onClick="goBack"> Go back</Button>
 			<Button onClick="openUserData">Click here to view your data</Button>
 			</View>
 	</Window>

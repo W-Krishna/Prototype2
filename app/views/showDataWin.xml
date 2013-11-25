@@ -1,7 +1,7 @@
 <Alloy>
-	<Window class="container" onFocus="showData" exitOnClose="true">
+	<Window class="container" onFocus="showData" exitOnClose="false" fullscreen="false" navBarHidden="FALSE" >
 		<View layout="vertical">
-		<View layout="horizontal" height="Ti.UI.SIZE" class = "dTop alignCenter">
+		<View id = "userView" layout="horizontal" height="Ti.UI.SIZE" class = "dTop alignCenter">
 						<Label class="blueClr font16 size1of2  ">Your Name : </Label>
 						<Label id = "userName"class="blueClr font16 size1of2"></Label>
 						</View>
@@ -14,10 +14,9 @@
 						<Label id="userPhone" class="blueClr font16 size1of2"></Label>
 						</View>
 						<Button onClick = "getPhoto">Add your photo</Button>
-						<Button id="clickMe" onClick = "buttonClicked" class="fullWidth dTop">Click me to go back</Button>
-						<View layout="horizontal" height = "Ti.UI.SIZE">
-						<ImageView id="userImage" borderColor="red" onClick="seThat" image="android/images/appicon.png">image</ImageView>
-						</View>
+						<ImageView id="userImage"></ImageView>
+					
+						
 		</View>
 	</Window>
 </Alloy>

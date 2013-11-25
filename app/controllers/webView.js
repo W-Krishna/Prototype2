@@ -1,4 +1,1 @@
-function goBack() {
-	$.winWebView.close();	
-}
-
+$.winWebView.open();

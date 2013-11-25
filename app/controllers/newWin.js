@@ -1,7 +1,8 @@
-
-function goBack() {
-	$.newWin.close();	
-}
+$.newWin.addEventListener("open", function() {
+	var actionbar =  require('actionBarAndroid');
+	var ab = new actionbar();
+	ab.actionbar($.newWin);
+});
 
 function seeWebView() {
 	webView= Alloy.createController('webView').getView();
@@ -13,14 +14,13 @@ function openUserData(){
 		showDatawin.open();
 }
 
-function getUserData(file){
+/*function getUserData(file){
 	var userDetails = require('showUserData');
 	var user = new userDetails();
 	var userData = user.userDetailsInput();
 	//userName.showUserData();
-	alert("otchs");
 	alert(userData.userName);
-}
+}*/
 
 
 $.newWin.open();

@@ -1,7 +1,4 @@
 function Controller() {
-    function goBack() {
-        $.winWebView.close();
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "webView";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -9,11 +6,11 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __defers = {};
     $.__views.winWebView = Ti.UI.createWindow({
         id: "winWebView",
         modal: "true",
-        exitOnClose: "false"
+        exitOnClose: "false",
+        fullscreen: "false"
     });
     $.__views.winWebView && $.addTopLevelView($.__views.winWebView);
     $.__views.webview = Ti.UI.createWebView({
@@ -23,16 +20,9 @@ function Controller() {
         height: Ti.UI.SIZE
     });
     $.__views.winWebView.add($.__views.webview);
-    $.__views.__alloyId22 = Ti.UI.createButton({
-        title: "CLick here to return",
-        layout: "vertical",
-        id: "__alloyId22"
-    });
-    $.__views.winWebView.add($.__views.__alloyId22);
-    goBack ? $.__views.__alloyId22.addEventListener("click", goBack) : __defers["$.__views.__alloyId22!click!goBack"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId22!click!goBack"] && $.__views.__alloyId22.addEventListener("click", goBack);
+    $.winWebView.open();
     _.extend($, exports);
 }
 
