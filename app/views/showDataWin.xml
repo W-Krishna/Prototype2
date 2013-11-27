@@ -15,7 +15,7 @@
 						</View>
 						<Button onClick = "getPhoto">Add your photo</Button>
 						<ImageView id="userImage"></ImageView>
-					
+					<Button id = 'getListView' onClick="getListView">see the list</Button>
 						
 		</View>
 	</Window>

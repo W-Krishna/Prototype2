@@ -1,0 +1,38 @@
+
+".container" : {
+  
+},
+
+".font22": {
+	font :{
+		fontSize: "22dp",
+		fontFamily : "DroidSans",
+		fontWeight : "bold"
+	}
+},
+
+".font16": {
+	font :{
+		fontSize: "16dp",
+		fontFamily : "DroidSans"
+	}
+},
+
+".font20": {
+	font :{
+		fontSize: "20dp",
+		fontFamily : "DroidSans"
+	}
+},
+
+
+".font18": {
+	font :{
+		fontSize: "18dp",
+		fontFamily : "DroidSans"
+	}
+}
+
+".hght" : {
+	height : "300dp"
+}

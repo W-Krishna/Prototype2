@@ -8,6 +8,10 @@ function Controller() {
         $.userPhone.text = userData.userPhone;
         userData.userPhone;
     }
+    function getListView() {
+        listview = Alloy.createController("listView", {}).getView();
+        listview.open();
+    }
     function getPhoto() {
         if (Ti.Media.isCameraSupported) {
             var overlayView = Ti.UI.createView({
@@ -140,11 +144,11 @@ function Controller() {
     });
     $.__views.showDataWin && $.addTopLevelView($.__views.showDataWin);
     showData ? $.__views.showDataWin.addEventListener("focus", showData) : __defers["$.__views.showDataWin!focus!showData"] = true;
-    $.__views.__alloyId8 = Ti.UI.createView({
+    $.__views.__alloyId20 = Ti.UI.createView({
         layout: "vertical",
-        id: "__alloyId8"
+        id: "__alloyId20"
     });
-    $.__views.showDataWin.add($.__views.__alloyId8);
+    $.__views.showDataWin.add($.__views.__alloyId20);
     $.__views.userView = Ti.UI.createView({
         top: "0.5%",
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
@@ -152,17 +156,17 @@ function Controller() {
         layout: "horizontal",
         height: Ti.UI.SIZE
     });
-    $.__views.__alloyId8.add($.__views.userView);
-    $.__views.__alloyId9 = Ti.UI.createLabel({
+    $.__views.__alloyId20.add($.__views.userView);
+    $.__views.__alloyId21 = Ti.UI.createLabel({
         font: {
             fontSize: "16dp"
         },
         color: "blue",
         width: "50%",
         text: "Your Name :",
-        id: "__alloyId9"
+        id: "__alloyId21"
     });
-    $.__views.userView.add($.__views.__alloyId9);
+    $.__views.userView.add($.__views.__alloyId21);
     $.__views.userName = Ti.UI.createLabel({
         font: {
             fontSize: "16dp"
@@ -172,23 +176,23 @@ function Controller() {
         id: "userName"
     });
     $.__views.userView.add($.__views.userName);
-    $.__views.__alloyId10 = Ti.UI.createView({
+    $.__views.__alloyId22 = Ti.UI.createView({
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         layout: "horizontal",
         height: Ti.UI.SIZE,
-        id: "__alloyId10"
+        id: "__alloyId22"
     });
-    $.__views.__alloyId8.add($.__views.__alloyId10);
-    $.__views.__alloyId11 = Ti.UI.createLabel({
+    $.__views.__alloyId20.add($.__views.__alloyId22);
+    $.__views.__alloyId23 = Ti.UI.createLabel({
         font: {
             fontSize: "16dp"
         },
         color: "blue",
         width: "50%",
         text: "Your Email :",
-        id: "__alloyId11"
+        id: "__alloyId23"
     });
-    $.__views.__alloyId10.add($.__views.__alloyId11);
+    $.__views.__alloyId22.add($.__views.__alloyId23);
     $.__views.userEmail = Ti.UI.createLabel({
         font: {
             fontSize: "16dp"
@@ -197,24 +201,24 @@ function Controller() {
         width: "50%",
         id: "userEmail"
     });
-    $.__views.__alloyId10.add($.__views.userEmail);
-    $.__views.__alloyId12 = Ti.UI.createView({
+    $.__views.__alloyId22.add($.__views.userEmail);
+    $.__views.__alloyId24 = Ti.UI.createView({
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         layout: "horizontal",
         height: Ti.UI.SIZE,
-        id: "__alloyId12"
+        id: "__alloyId24"
     });
-    $.__views.__alloyId8.add($.__views.__alloyId12);
-    $.__views.__alloyId13 = Ti.UI.createLabel({
+    $.__views.__alloyId20.add($.__views.__alloyId24);
+    $.__views.__alloyId25 = Ti.UI.createLabel({
         font: {
             fontSize: "16dp"
         },
         color: "blue",
         width: "50%",
         text: "Your Phone :",
-        id: "__alloyId13"
+        id: "__alloyId25"
     });
-    $.__views.__alloyId12.add($.__views.__alloyId13);
+    $.__views.__alloyId24.add($.__views.__alloyId25);
     $.__views.userPhone = Ti.UI.createLabel({
         font: {
             fontSize: "16dp"
@@ -223,17 +227,23 @@ function Controller() {
         width: "50%",
         id: "userPhone"
     });
-    $.__views.__alloyId12.add($.__views.userPhone);
-    $.__views.__alloyId14 = Ti.UI.createButton({
+    $.__views.__alloyId24.add($.__views.userPhone);
+    $.__views.__alloyId26 = Ti.UI.createButton({
         title: "Add your photo",
-        id: "__alloyId14"
+        id: "__alloyId26"
     });
-    $.__views.__alloyId8.add($.__views.__alloyId14);
-    getPhoto ? $.__views.__alloyId14.addEventListener("click", getPhoto) : __defers["$.__views.__alloyId14!click!getPhoto"] = true;
+    $.__views.__alloyId20.add($.__views.__alloyId26);
+    getPhoto ? $.__views.__alloyId26.addEventListener("click", getPhoto) : __defers["$.__views.__alloyId26!click!getPhoto"] = true;
     $.__views.userImage = Ti.UI.createImageView({
         id: "userImage"
     });
-    $.__views.__alloyId8.add($.__views.userImage);
+    $.__views.__alloyId20.add($.__views.userImage);
+    $.__views.getListView = Ti.UI.createButton({
+        title: "see the list",
+        id: "getListView"
+    });
+    $.__views.__alloyId20.add($.__views.getListView);
+    getListView ? $.__views.getListView.addEventListener("click", getListView) : __defers["$.__views.getListView!click!getListView"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.showDataWin.open();
@@ -243,7 +253,8 @@ function Controller() {
         ab.actionbar($.showDataWin);
     });
     __defers["$.__views.showDataWin!focus!showData"] && $.__views.showDataWin.addEventListener("focus", showData);
-    __defers["$.__views.__alloyId14!click!getPhoto"] && $.__views.__alloyId14.addEventListener("click", getPhoto);
+    __defers["$.__views.__alloyId26!click!getPhoto"] && $.__views.__alloyId26.addEventListener("click", getPhoto);
+    __defers["$.__views.getListView!click!getListView"] && $.__views.getListView.addEventListener("click", getListView);
     _.extend($, exports);
 }
 

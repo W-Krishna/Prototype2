@@ -1,13 +1,13 @@
 module.exports = [ {
     isClass: true,
-    priority: 10000.0014,
+    priority: 10000.0023,
     key: "container",
     style: {
         backgroundColor: "white"
     }
 }, {
     isClass: true,
-    priority: 10000.0015,
+    priority: 10000.0024,
     key: "font16",
     style: {
         font: {
@@ -16,7 +16,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0016,
+    priority: 10000.0025,
     key: "dTop",
     style: {
         top: "0.5%"

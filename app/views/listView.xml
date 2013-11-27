@@ -1,0 +1,20 @@
+<Alloy>
+	<Window class = "container" fullscreen = "false">
+		 <ListView id = "listview" defaultItemTemplate = "template">
+            <Templates>
+                <ItemTemplate name = "template">
+                	<ImageView bindId="Pic" id="listingImage" left = '0' top ='2%' />
+                    <Label bindId="Title" id = "title" class =" font22" top = '0' left = '50%' ></Label>
+                    <Label bindId="Name" id = "name" class = "font20" left = '455' bottom = '23%'></Label>
+                    <Label bindId="Email" id = "email" class = "font18" left = '455' bottom = '12%'></Label>
+                    <Label bindId="Phone" id = "phone" class = "font16" left = '455' bottom = '1%'></Label>
+                </ItemTemplate>
+            </Templates>
+
+            <ListSection id ="listings">
+                <ListItem id = "list" class = "hght"/>
+             </ListSection>
+        </ListView>
+    
+	</Window>
+</Alloy>

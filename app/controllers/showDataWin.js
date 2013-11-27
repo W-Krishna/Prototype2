@@ -16,7 +16,11 @@ $.showDataWin.addEventListener("open", function() {
 	function buttonClicked() {
 		$.showDataWin.close();
 	}
-	
+	function getListView() {
+		 listview= Alloy.createController('listView', {
+      }).getView();
+		listview.open();
+	}
 	function getPhoto() {
 		if(Ti.Media.isCameraSupported){
 		var overlayView = Ti.UI.createView({ height : "Ti.UI.SIZE"});
@@ -112,8 +116,7 @@ $.showDataWin.addEventListener("open", function() {
 			};
 			
 			Titanium.Geolocation.addEventListener('location', position);
-			 var magneticHeading = function(e)
-			{
+			 var magneticHeading = function(e) {
 				if (e.error)
 				{
 					compassHeading.text = 'error: ' + e.error;
@@ -130,25 +133,25 @@ $.showDataWin.addEventListener("open", function() {
 				compassHeading.text = 'x:' + x + ' y: ' + y + ' z:' + z;
 				degreeNorth.text = trueHeading;
 				
-				if(degreeNorth.text > '0' && degreeNorth.text < '90'){
+				if(degreeNorth.text > '0' && degreeNorth.text < '90') {
               		direction.text = "NE";
-        		} else if(degreeNorth.text == '90'){
-             		direction.text = "E";
-        		} else if(degreeNorth.text >'90' && degreeNorth.text <'180'){
-              		direction.text = "SE";
-        		} else if(degreeNorth.text == '180'){
-              		direction.text = "S";
-        		} else if(degreeNorth.text >'180' && degreeNorth.text < '270'){
-              		direction.text = "SW";
-        		} else if(degreeNorth.text == '270'){
-              		direction.text = "W";
-        		} else if(degreeNorth.text >'270' && degreeNorth.text < '360'){
-              		direction.text = "NW";
-        		} else if(degreeNorth.text == '0' || degreeNorth.text == '360'){
-              		direction.text = "N";
-        }
-			};
-			Titanium.Geolocation.addEventListener('heading', magneticHeading);
+        			} else if(degreeNorth.text == '90') {
+             			direction.text = "E";
+        			} else if(degreeNorth.text >'90' && degreeNorth.text <'180'){
+              			direction.text = "SE";
+        			} else if(degreeNorth.text == '180'){
+              			direction.text = "S";
+        			} else if(degreeNorth.text >'180' && degreeNorth.text < '270'){
+	              		direction.text = "SW";
+    	    		} else if(degreeNorth.text == '270'){
+        	      		direction.text = "W";
+        			} else if(degreeNorth.text >'270' && degreeNorth.text < '360'){
+              			direction.text = "NW";
+        			} else if(degreeNorth.text == '0' || degreeNorth.text == '360'){
+              			direction.text = "N";
+        			}
+				};
+				Titanium.Geolocation.addEventListener('heading', magneticHeading);
 		}
 	}
 }
