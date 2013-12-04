@@ -1,11 +1,11 @@
 module.exports = [ {
     isClass: true,
-    priority: 10000.0016,
+    priority: 10000.0017,
     key: "container",
     style: {}
 }, {
     isClass: true,
-    priority: 10000.0017,
+    priority: 10000.0018,
     key: "font22",
     style: {
         font: {
@@ -16,7 +16,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0018,
+    priority: 10000.0019,
     key: "font16",
     style: {
         font: {
@@ -26,7 +26,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0019,
+    priority: 10000.002,
     key: "font20",
     style: {
         font: {
@@ -36,7 +36,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.002,
+    priority: 10000.0021,
     key: "font18",
     style: {
         font: {
@@ -46,7 +46,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0021,
+    priority: 10000.0022,
     key: "hght",
     style: {
         height: "300dp"

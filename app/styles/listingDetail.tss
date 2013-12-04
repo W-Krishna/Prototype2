@@ -1,4 +1,11 @@
 
 ".container" : {
   
+},
+".font22": {
+	font :{
+		fontSize: "22dp",
+		fontFamily : "DroidSans",
+		fontWeight : "bold"
+	}
 }

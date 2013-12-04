@@ -145,10 +145,8 @@ function Controller() {
     $.listview.sections = [ section ];
     var listItemClicked = function(e) {
         var listItem = section.getItemAt(e.itemIndex);
-        if (listItem) {
-            Ti.App.Properties.setObject("listItemClicked", listItem);
-            openItemDetail(listItem);
-        }
+        alert(listItem);
+        listItem && openItemDetail(listItem);
     };
     $.listview.addEventListener("itemclick", listItemClicked);
     var openItemDetail = function(obj) {

@@ -29,9 +29,9 @@ $.listView.addEventListener("open", function() {
 		
 		var listItemClicked = function (e) {
 			var listItem = section.getItemAt(e.itemIndex);
-			
+			alert(listItem);
 			if (listItem) {
-				Ti.App.Properties.setObject('listItemClicked', listItem);
+				//Ti.App.Properties.setObject('listItemClicked', listItem);
 				//module.exports = openItemDetail();
 				openItemDetail(listItem);
 			}

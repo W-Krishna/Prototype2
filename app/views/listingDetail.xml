@@ -1,8 +1,8 @@
 <Alloy>
 	<Window class="container" fullscreen="false">
-		<Label id = "title" top = '1%' left = '50%'></Label>
-		<Label id = 'name' left = '2dp' bottom = '23%'></Label>
-		<Label id = 'email' left = '2dp' bottom = '12%'></Label>
-		<Label id = 'phone' left = '2dp' bottom = '1%'></Label>
+		<Label id = "title" top = '1%' class="font22" color="white"></Label>
+		<Label id = 'name' left = '2dp' bottom = '23%' class="font22" color="white"></Label>
+		<Label id = 'email' left = '2dp' bottom = '12%' class="font22"color="white"></Label>
+		<Label id = 'phone' left = '2dp' bottom = '2%' class="font22" color="white"></Label>
 	</Window>
 </Alloy>
